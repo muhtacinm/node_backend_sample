@@ -5,7 +5,6 @@
 - open the project locally
 - Create a branch using the naming convention **yourFirstName_yourLastName**. This is where you work should be saved.
 - The application will start on http://localhost:3001
-- To better understand the workflow process, view [this video](https://www.youtube.com/watch?v=1jAtPrOrRPs) on how to fork a repository, and open a pull request to merge branches within a forked repository
 
 ## Existing State ##
 This is a simple node application for serving a blog.<br>
