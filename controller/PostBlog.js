@@ -33,4 +33,4 @@ postBlog = (req, res) => {
     })
 }
 
-module.exports = { postBlog }
+module.exports = postBlog
