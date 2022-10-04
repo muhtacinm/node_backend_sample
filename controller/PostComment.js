@@ -3,9 +3,9 @@ const Blog = require('../models/blog')
 
 postComment = async (req, res) => {
   const body = req.body
-  const id = req.params.id
+  const blogId = req.params.id
 
-  const blog = await Blog.find({id:id});
+  const blog = await Blog.find({id:blogId});
   if(!blog.length){
     return res.status(400).json({
         success: false,
@@ -23,7 +23,7 @@ postComment = async (req, res) => {
   const name = body.name
   const comment = body.comment
 
-  const newComment = new Comment({blogId: id, name: name, comment: comment})
+  const newComment = new Comment({blogId: blogId, name: name, comment: comment})
 
   if (!newComment) {
     return res.status(400).json({ success: false, error: err })
