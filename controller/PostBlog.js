@@ -3,6 +3,7 @@ const Blog = require('../models/blog')
 postBlog = (req, res) => {
   const body = req.body
 
+  //check if POST body has values
   if (!body) {
     return res.status(400).json({
       success: false,

@@ -5,6 +5,7 @@ postComment = async (req, res) => {
   const body = req.body
   const blogId = req.params.id
 
+  //check if blog the comment is about exists
   const blog = await Blog.find({id:blogId});
   if(!blog.length){
     return res.status(400).json({
@@ -13,6 +14,7 @@ postComment = async (req, res) => {
       })
   }
 
+  //check if POST body has values
   if (!body) {
     return res.status(400).json({
       success: false,
@@ -20,9 +22,11 @@ postComment = async (req, res) => {
     })
   }
 
+  //get name and comment from
   const name = body.name
   const comment = body.comment
 
+  //add name and comment to schema
   const newComment = new Comment({blogId: blogId, name: name, comment: comment})
 
   if (!newComment) {

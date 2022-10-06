@@ -1,10 +1,6 @@
 const express = require('express')
-
-//Blogs Controller
 const GetBlogs = require('../controller/getBlogs')
 const PostBlog = require('../controller/postBlog')
-
-//Comments Controller
 const PostComment = require('../controller/postComment')
 const GetComments = require('../controller/getComments')
 

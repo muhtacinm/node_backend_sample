@@ -1,6 +1,7 @@
 const Comment = require('../models/comment')
 
 getComments= async (req, res) => {
+  //find comment based on the blogId
   await Comment.find({blogId: req.params.id}, (err, comment) => {
     if (err) {
       return res.status(400).json({ success: false, error: err })

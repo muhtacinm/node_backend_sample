@@ -1,7 +1,9 @@
 const Blog = require('../models/blog')
 
 getBlogs = async (req, res) => {
-  await Blog.find(req.params.id ? {id: req.params.id} : {}, (err, blog) => { //if ID is passed get blog by ID, if not get ALL blogs
+  
+  //if ID is passed get blog by ID, if not get ALL blogs
+  await Blog.find(req.params.id ? {id: req.params.id} : {}, (err, blog) => { 
     if (err) {
       return res.status(400).json({ success: false, error: err })
     }
