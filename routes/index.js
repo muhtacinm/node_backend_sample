@@ -1,10 +1,17 @@
 const express = require('express')
-const GetBlogs = require('./controller/getBlogs')
-const PostBlog = require('./controller/postBlog')
+const GetBlogs = require('../controller/getBlogs')
+const PostBlog = require('../controller/postBlog')
+const PostComment = require('../controller/postComment')
+const GetComments = require('../controller/getComments')
 
 const router = express.Router()
 
-router.get('/blog/:id', GetBlogs)
+//Blog Routes
+router.get('/blog/:id?', GetBlogs)  //make id optional
 router.post('/blog/post', PostBlog)
+
+//Comment Routes
+router.post('/blog/post/:id/comment', PostComment)
+router.get('/blog/post/:id/comment', GetComments)
 
 module.exports = router

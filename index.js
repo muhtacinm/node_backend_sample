@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 
 const db = require ('./db')
-const router = require('./router')
+const router = require('./routes')
 
 const app = express()
 const port = 3001
